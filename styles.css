@@ -616,13 +616,78 @@ button {
   display: flex;
   align-items: center;
   gap: 24px;
+  flex-wrap: wrap;
+}
+
+.curated-price-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.curated-price-old {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: #9CA3AF;
+  text-decoration: line-through;
+  font-weight: 400;
 }
 
 .curated-price {
   font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.2rem;
+  font-weight: 600;
   color: var(--gold-dark);
+}
+
+.discount-badge-pill {
+  background: rgba(225, 29, 72, 0.08);
+  color: #E11D48;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(225, 29, 72, 0.25);
+  text-transform: uppercase;
+}
+
+.product-price-stack {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.product-price-old {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: #9CA3AF;
+  text-decoration: line-through;
+}
+
+.product-price.on-sale {
+  color: #BE123C;
+  font-weight: 600;
+}
+
+.modal-price-old {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: #9CA3AF;
+  text-decoration: line-through;
+  margin-right: 6px;
+}
+
+.modal-discount-pill {
+  background: rgba(225, 29, 72, 0.08);
+  color: #E11D48;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(225, 29, 72, 0.25);
+  margin-left: 8px;
 }
 
 .curated-visual-col {

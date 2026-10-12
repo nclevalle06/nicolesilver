@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Anillo Escultórico Solaris",
       category: "anillos",
       categoryLabel: "Anillos",
-      basePrice: 240,
+      basePrice: 200,
+      originalPrice: 240,
       image: "assets/images/ring-solaris.jpg",
-      badge: "Más Vendido",
+      badge: "Oferta -17%",
       rating: 5.0,
       reviewsCount: 42,
       description: "Una joya de silueta orgánica forjada a mano que captura la danza de la luz sobre el agua. Diseñada con contornos fluidos que se adaptan naturalmente a la anatomía del dedo.",
@@ -234,7 +235,14 @@ document.addEventListener('DOMContentLoaded', () => {
           </h3>
           <p class="product-description-snippet">${product.description}</p>
           <div class="product-footer-row">
-            <span class="product-price">${formatPrice(product.basePrice)}</span>
+            ${product.originalPrice ? `
+              <div class="product-price-stack">
+                <span class="product-price-old">${formatPrice(product.originalPrice)}</span>
+                <span class="product-price on-sale">${formatPrice(product.basePrice)}</span>
+              </div>
+            ` : `
+              <span class="product-price">${formatPrice(product.basePrice)}</span>
+            `}
             <div class="metal-indicators" title="Disponible en Plata 925, Vermeil Oro 18K y Oro Rosa">
               <span class="metal-dot silver" title="Plata 925"></span>
               <span class="metal-dot gold" title="Vermeil Oro 18K"></span>
@@ -534,7 +542,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const price = Math.round(currentModalProduct.basePrice * currentMetalMultiplier);
     const totalPrice = price * currentModalQty;
 
-    document.getElementById('modalPrice').textContent = formatPrice(price);
+    const modalPriceEl = document.getElementById('modalPrice');
+    if (currentModalProduct.originalPrice) {
+      const origPrice = Math.round(currentModalProduct.originalPrice * currentMetalMultiplier);
+      modalPriceEl.innerHTML = `
+        <span class="modal-price-old">${formatPrice(origPrice)}</span>
+        <span class="modal-price-current">${formatPrice(price)}</span>
+        <span class="modal-discount-pill">-17% OFF</span>
+      `;
+    } else {
+      modalPriceEl.textContent = formatPrice(price);
+    }
+
     document.getElementById('modalAddPrice').textContent = formatPrice(totalPrice);
   }
 
@@ -771,6 +790,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCartUI();
       updateWishlistUI();
       updateModalPrices();
+      updateCuratedBannerPrice();
       showToast(`Moneda cambiada a ${currentCurrency}`);
     });
   }
@@ -1079,10 +1099,19 @@ document.addEventListener('DOMContentLoaded', () => {
     finishOrder
   };
 
+  // Curated banner price sync
+  function updateCuratedBannerPrice() {
+    const curatedPriceOld = document.getElementById('curatedPriceOld');
+    const curatedPriceNew = document.getElementById('curatedPriceNew');
+    if (curatedPriceOld) curatedPriceOld.textContent = formatPrice(240);
+    if (curatedPriceNew) curatedPriceNew.textContent = formatPrice(200);
+  }
+
   // =========================================================================
   // Initial Render
   // =========================================================================
   renderProducts();
+  updateCuratedBannerPrice();
   updateCartUI();
   updateWishlistUI();
 

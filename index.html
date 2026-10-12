@@ -227,7 +227,11 @@
         </ul>
         <div class="curated-cta-group">
           <button class="btn btn-primary" onclick="window.smykkeApp.openProductModal(1)">Ver Detalles & Comprar</button>
-          <span class="curated-price" data-price-usd="240">$240 USD</span>
+          <div class="curated-price-block">
+            <span class="curated-price-old" id="curatedPriceOld" data-price-usd="240">$240 USD</span>
+            <span class="curated-price" id="curatedPriceNew" data-price-usd="200">$200 USD</span>
+            <span class="discount-badge-pill">-17% OFF</span>
+          </div>
         </div>
       </div>
       <div class="curated-visual-col">
