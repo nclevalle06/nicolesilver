@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMYKKE | Alta Joyería Nórdica en Plata 925 & Oro 18K</title>
+  <meta name="description" content="Descubre SMYKKE: Alta joyería artesanal con diseño contemporáneo escandinavo. Anillos escultóricos, collares finos, pendientes y pulseras en Plata Esterlina 925 y Oro de 18K.">
+  <meta name="keywords" content="joyas de plata, anillos escultóricos, joyería de lujo, SMYKKE, collares finos, plata esterlina 925, oro 18k">
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SMYKKE — Alta Joyería Nórdica">
+  <meta property="og:description" content="Elegancia minimalista y metales nobles hechos a mano con diseño atemporal.">
+  <meta property="og:image" content="assets/images/hero.jpg">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="announcement-content">
+      <span class="announcement-tag">ENVÍO DE CORTESÍA</span>
+      <span>Envío gratuito internacional en órdenes superiores a $150 USD | Packaging de lujo & certificado de autenticidad</span>
+    </div>
+    <button class="announcement-close" id="closeAnnouncement" aria-label="Cerrar aviso">&times;</button>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Left Nav Links -->
+      <nav class="nav-desktop-left" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#coleccion" class="nav-link">Colección</a></li>
+          <li><a href="#artesania" class="nav-link">El Taller</a></li>
+          <li><a href="#filosofia" class="nav-link">Nuestra Historia</a></li>
+          <li><a href="#prensa" class="nav-link">Editorial</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center Brand Logo -->
+      <div class="brand-logo-wrap">
+        <a href="#" class="brand-logo" aria-label="SMYKKE Inicio">
+          <span class="logo-title">S M Y K K E</span>
+          <span class="logo-sub">COPENHAGEN &bull; FINE JEWELRY</span>
+        </a>
+      </div>
+
+      <!-- Right Action Icons -->
+      <div class="header-actions">
+        <!-- Currency Selector -->
+        <div class="currency-dropdown">
+          <select id="currencySelect" aria-label="Seleccionar moneda" class="currency-select">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="MXN">MXN ($)</option>
+            <option value="COP">COP ($)</option>
+          </select>
+        </div>
+
+        <!-- Search Button -->
+        <button class="action-btn" id="searchOpenBtn" aria-label="Buscar joyas" title="Buscar">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Button -->
+        <button class="action-btn" id="wishlistOpenBtn" aria-label="Ver lista de deseos" title="Deseos">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge" id="wishlistBadge">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="action-btn cart-btn" id="cartOpenBtn" aria-label="Abrir bolsa de compras" title="Bolsa">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge" id="cartBadge">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <span class="logo-title-sm">SMYKKE</span>
+      <button class="close-drawer-btn" id="mobileDrawerClose" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#coleccion" class="mobile-link">Colección de Joyas</a></li>
+      <li><a href="#artesania" class="mobile-link">Artesanía & Materiales</a></li>
+      <li><a href="#filosofia" class="mobile-link">Nuestra Filosofía</a></li>
+      <li><a href="#prensa" class="mobile-link">En la Prensa</a></li>
+      <li><a href="#contacto" class="mobile-link">Contacto & Citas</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <p class="drawer-contact-note">¿Necesitas asesoría para una pieza personalizada?</p>
+      <a href="https://wa.me/34600000000" target="_blank" rel="noopener" class="concierge-link">
+        Consultar con Personal Jeweler &rarr;
+      </a>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Search Modal Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box-wrap">
+      <div class="search-input-group">
+        <svg class="search-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Buscar por nombre, metal, piedra o estilo (ej. anillo, perla, oro)..." autocomplete="off">
+        <button class="search-close-btn" id="searchCloseBtn" aria-label="Cerrar búsqueda">&times;</button>
+      </div>
+      <div class="search-quick-tags">
+        <span>Búsquedas populares:</span>
+        <button class="tag-btn" data-search="Plata">Plata 925</button>
+        <button class="tag-btn" data-search="Oro">Oro 18K</button>
+        <button class="tag-btn" data-search="Perla">Perlas Barrocas</button>
+        <button class="tag-btn" data-search="Anillo">Anillos</button>
+      </div>
+      <div class="search-results-preview" id="searchResultsPreview"></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-media-wrapper">
+      <img src="assets/images/hero.jpg" alt="SMYKKE Colección Exclusiva de Joyería de Lujo" class="hero-image">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">EDICIÓN ATEMPORAL &bull; 2026</span>
+      <h1 class="hero-title">Esculturas que habitan la piel.</h1>
+      <p class="hero-description">
+        Joyas moldeadas artesanalmente con plata de ley 925 reciclada y oro sólido de 18 quilates. Inspiradas en la serenidad y pureza del minimalismo escandinavo.
+      </p>
+      <div class="hero-actions">
+        <a href="#coleccion" class="btn btn-primary">Explorar la Colección</a>
+        <a href="#artesania" class="btn btn-outline">El Arte SMYKKE</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Descubrir</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Brand Highlights Ribbon -->
+  <section class="trust-ribbon">
+    <div class="trust-container">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="trust-text">
+          <strong>Metales Nobles Certificados</strong>
+          <span>Plata Esterlina 925 y Oro 18K verificados</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="trust-text">
+          <strong>Garantía de Por Vida</strong>
+          <span>Pulido de cortesía y mantenimiento perpetuo</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        </div>
+        <div class="trust-text">
+          <strong>Envío Seguro & Discreto</strong>
+          <span>Asegurado al 100% con estuche de nogal</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div class="trust-text">
+          <strong>Sostenibilidad Ética</strong>
+          <span>Oro y plata trazables con perlas de cultivo natural</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Curated Banner -->
+  <section class="curated-highlight">
+    <div class="curated-container">
+      <div class="curated-text-col">
+        <span class="section-badge">PIEZA EMBLEMÁTICA</span>
+        <h2 class="curated-heading">Anillo Escultórico Solaris</h2>
+        <p class="curated-sub">
+          Fundido a mano con una aleación híbrida de plata pura y filamentos de oro amarillo de 18K. Su silueta fluida emula las olas del archipiélago de Copenhague.
+        </p>
+        <ul class="curated-specs">
+          <li><strong>Material:</strong> Plata 925 maciza + Baño 18K Vermeil 5 micras</li>
+          <li><strong>Acabado:</strong> Pulido espejo de alto brillo y textura interior cepillada</li>
+          <li><strong>Hecho a Mano:</strong> 14 horas de forjado y grabado artesanal</li>
+        </ul>
+        <div class="curated-cta-group">
+          <button class="btn btn-primary" onclick="window.smykkeApp.openProductModal(1)">Ver Detalles & Comprar</button>
+          <span class="curated-price" data-price-usd="240">$240 USD</span>
+        </div>
+      </div>
+      <div class="curated-visual-col">
+        <div class="curated-card">
+          <img src="assets/images/ring-solaris.jpg" alt="Anillo Solaris SMYKKE" class="curated-img">
+          <div class="card-badge">Más Vendido</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog / Shop Section -->
+  <section class="catalog-section" id="coleccion">
+    <div class="section-header">
+      <span class="section-badge">CATÁLOGO EXCLUSIVO</span>
+      <h2 class="section-title">La Colección Permanente</h2>
+      <p class="section-subtitle">Obras de orfebrería concebidas para ser llevadas cada día y conservadas por generaciones.</p>
+    </div>
+
+    <!-- Filter Buttons & Controls -->
+    <div class="catalog-controls">
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-chip active" data-category="all">Todas las Piezas</button>
+        <button class="filter-chip" data-category="anillos">Anillos</button>
+        <button class="filter-chip" data-category="collares">Collares</button>
+        <button class="filter-chip" data-category="pendientes">Pendientes</button>
+        <button class="filter-chip" data-category="pulseras">Pulseras</button>
+      </div>
+
+      <div class="catalog-sort">
+        <label for="sortSelect" class="sort-label">Ordenar:</label>
+        <select id="sortSelect" class="sort-select">
+          <option value="featured">Destacados</option>
+          <option value="price-asc">Precio: Menor a Mayor</option>
+          <option value="price-desc">Precio: Mayor a Menor</option>
+          <option value="name-asc">Nombre (A - Z)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Products will be dynamically rendered via JS -->
+    </div>
+  </section>
+
+  <!-- Story / Craftsmanship Section -->
+  <section class="craft-story-section" id="artesania">
+    <div class="craft-container">
+      <div class="craft-images-grid">
+        <div class="craft-img-box large">
+          <img src="assets/images/choker-hav.jpg" alt="Detalle de perlas barrocas SMYKKE">
+        </div>
+        <div class="craft-img-box small">
+          <img src="assets/images/bracelet-nordic.jpg" alt="Pulsera de plata 925 artesanal">
+        </div>
+      </div>
+      <div class="craft-content">
+        <span class="section-badge">NUESTRO TALLER</span>
+        <h2 class="craft-title">Orfebrería que honra la materia prima</h2>
+        <p class="craft-lead">
+          En SMYKKE creemos que la verdadera sofisticación reside en la honestidad de las formas y en el respeto por los metales nobles.
+        </p>
+        <div class="craft-features">
+          <div class="feature-box">
+            <span class="feature-number">01</span>
+            <div>
+              <h3>Plata 925 y Oro Puro de 18K</h3>
+              <p>Trabajamos exclusivamente con metales preciosos hipoalergénicos sin níquel ni cadmio, asegurando una pureza inquebrantable.</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <span class="feature-number">02</span>
+            <div>
+              <h3>Perlas Barrocas Seleccionadas a Mano</h3>
+              <p>Cada perla de agua dulce es única, con tonalidades iridiscentes y formas orgánicas no industriales.</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <span class="feature-number">03</span>
+            <div>
+              <h3>Producción Consciente y Limitada</h3>
+              <p>Forjamos en lotes pequeños en nuestro estudio, reduciendo la huella de carbono y garantizando piezas irrepetibles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy & Manifesto Quote Banner -->
+  <section class="manifesto-banner" id="filosofia">
+    <div class="manifesto-inner">
+      <span class="manifesto-quote-mark">&ldquo;</span>
+      <blockquote class="manifesto-text">
+        El lujo moderno no grita para llamar la atención. Se revela en el peso de un anillo de plata maciza, en la calidez del oro sobre la piel y en la armonía de lo esencial.
+      </blockquote>
+      <cite class="manifesto-author">&mdash; Nicole V., Fundadora & Directora Creativa de SMYKKE</cite>
+    </div>
+  </section>
+
+  <!-- Editorial Press Quotes -->
+  <section class="press-section" id="prensa">
+    <div class="press-container">
+      <span class="section-badge center">RECONOCIMIENTO EDITORIAL</span>
+      <h2 class="press-header-title">Elogiada por la crítica de moda</h2>
+      
+      <div class="press-cards-wrapper">
+        <div class="press-card">
+          <div class="press-logo">VOGUE</div>
+          <p class="press-quote">
+            "SMYKKE reinventa el minimalismo escandinavo con piezas orgánicas que logran un balance sublime entre escultura y joya diaria."
+          </p>
+          <span class="press-edition">Edición Primavera Joyas</span>
+        </div>
+        <div class="press-card highlight">
+          <div class="press-logo">HARPER'S BAZAAR</div>
+          <p class="press-quote">
+            "La marca nórdica que las amantes del diseño limpio están coleccionando. Cada pieza parece esculpida por el agua y el tiempo."
+          </p>
+          <span class="press-edition">The Luxury Report</span>
+        </div>
+        <div class="press-card">
+          <div class="press-logo">ELLE</div>
+          <p class="press-quote">
+            "Metales nobles que desafían las tendencias efímeras. SMYKKE crea reliquias contemporáneas para la mujer de hoy."
+          </p>
+          <span class="press-edition">Must-Have Jewelry</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Luxury Packaging & Experience Section -->
+  <section class="experience-section">
+    <div class="experience-container">
+      <div class="exp-text">
+        <span class="section-badge">LA EXPERIENCIA DE UNBOXING</span>
+        <h2>Cada envío es un ritual de bienvenida</h2>
+        <p>
+          Recibe tus joyas en nuestro emblemático estuche forrado en lino color marfil con grabado en oro caliente, funda de ante protectora y paño microfibra de cuidado profesional. Perfecto para regalar o para consentirte.
+        </p>
+        <div class="exp-perks">
+          <div class="exp-perk-item">
+            <strong>Estuche Sostenible</strong>
+            <span>Cartón reciclado FSC y lino belga</span>
+          </div>
+          <div class="exp-perk-item">
+            <strong>Tarjeta Personalizada</strong>
+            <span>Escribe un mensaje de regalo sin costo</span>
+          </div>
+          <div class="exp-perk-item">
+            <strong>Kit de Limpieza SMYKKE</strong>
+            <span>Incluido en todas las órdenes superiores a $200</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-media">
+        <img src="assets/images/earrings-lumina.jpg" alt="Pendientes Lumina SMYKKE en estuche" class="exp-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter VIP Club -->
+  <section class="newsletter-section" id="contacto">
+    <div class="newsletter-card">
+      <span class="newsletter-eyebrow">EL CÍRCULO PRIVADO DE SMYKKE</span>
+      <h2 class="newsletter-heading">Únete a nuestra lista exclusiva</h2>
+      <p class="newsletter-desc">
+        Recibe un <strong>10% de bienvenida</strong> en tu primera adquisición, acceso anticipado a piezas limitadas y las notas editoriales del taller.
+      </p>
+      <form class="newsletter-form" id="newsletterForm">
+        <div class="input-wrap">
+          <input type="email" id="newsletterEmail" placeholder="Introduce tu correo electrónico..." required>
+          <button type="submit" class="btn btn-primary">Suscribirme</button>
+        </div>
+        <span class="form-disclaimer">Respetamos tu privacidad. Sin spam, sólo belleza y estrenos especiales.</span>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <span class="footer-logo">SMYKKE</span>
+        <p class="footer-about">
+          Estudio de alta joyería contemporánea fundado sobre la pureza de la plata 925 y la distinción del oro de 18 quilates. Diseñado para almas que aprecian la serenidad.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram" class="social-link">Instagram</a>
+          <a href="#" aria-label="Pinterest" class="social-link">Pinterest</a>
+          <a href="#" aria-label="Facebook" class="social-link">Facebook</a>
+          <a href="#" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Colecciones</h3>
+        <ul class="footer-links">
+          <li><a href="#coleccion" onclick="window.smykkeApp.filterCategory('anillos')">Anillos Escultóricos</a></li>
+          <li><a href="#coleccion" onclick="window.smykkeApp.filterCategory('collares')">Collares & Gargantillas</a></li>
+          <li><a href="#coleccion" onclick="window.smykkeApp.filterCategory('pendientes')">Pendientes & Aros</a></li>
+          <li><a href="#coleccion" onclick="window.smykkeApp.filterCategory('pulseras')">Brazaletes & Pulseras</a></li>
+          <li><a href="#coleccion" onclick="window.smykkeApp.filterCategory('all')">Edición Oro 18K</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Atención al Cliente</h3>
+        <ul class="footer-links">
+          <li><a href="#guia-tallas" id="sizeGuideBtn">Guía de Tallas & Medidas</a></li>
+          <li><a href="#cuidado-joyas" id="careGuideBtn">Guía de Cuidado de Metales</a></li>
+          <li><a href="#envios" id="shippingInfoBtn">Política de Envíos & Retornos</a></li>
+          <li><a href="#garantia" id="warrantyBtn">Certificado de Autenticidad</a></li>
+          <li><a href="https://wa.me/34600000000" target="_blank" rel="noopener">Concierge por WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Boutique & Citas</h3>
+        <p class="boutique-address">
+          Atelier Privado SMYKKE<br>
+          Gothersgade 44, 1123 København, Dinamarca<br>
+          <em>Atención con cita previa personalizada</em>
+        </p>
+        <p class="boutique-email">
+          <strong>Consultas:</strong> concierge@smykke.com
+        </p>
+        <div class="payment-badges">
+          <span class="pay-badge">VISA</span>
+          <span class="pay-badge">MASTERCARD</span>
+          <span class="pay-badge">AMEX</span>
+          <span class="pay-badge">APPLE PAY</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>&copy; 2026 SMYKKE Jewelry Atelier. Todos los derechos reservados.</p>
+        <div class="legal-links">
+          <a href="#">Términos y Condiciones</a>
+          <a href="#">Aviso de Privacidad</a>
+          <a href="#">Sostenibilidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Bolsa de compras">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-wrap">
+        <h2 class="cart-title">Tu Bolsa de Compras</h2>
+        <span class="cart-items-count" id="cartHeaderCount">(0 piezas)</span>
+      </div>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar bolsa">&times;</button>
+    </div>
+
+    <!-- Free Shipping Bar -->
+    <div class="shipping-progress-container">
+      <div class="shipping-progress-text" id="shippingProgressText">
+        Agrega <strong id="shippingRemaining">$150.00</strong> más para obtener <strong>Envío Gratis</strong>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="shippingProgressBar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items List -->
+    <div class="cart-items-container" id="cartItemsList">
+      <!-- Items dynamically populated via JS -->
+    </div>
+
+    <!-- Cart Footer with Totals -->
+    <div class="cart-drawer-footer" id="cartFooter">
+      <div class="cart-promo-box">
+        <input type="text" id="promoInput" placeholder="Código de descuento (ej. SMYKKE10)">
+        <button id="promoApplyBtn">Aplicar</button>
+      </div>
+      <div id="promoNotice" class="promo-notice"></div>
+
+      <div class="cart-totals-summary">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="summary-line" id="discountLine" style="display: none;">
+          <span class="text-gold">Descuento (SMYKKE10)</span>
+          <span class="text-gold" id="cartDiscount">-$0.00</span>
+        </div>
+        <div class="summary-line">
+          <span>Envío Estimado</span>
+          <span id="cartShipping">Gratis</span>
+        </div>
+        <div class="summary-line total-line">
+          <strong>Total</strong>
+          <strong id="cartTotal">$0.00</strong>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+        Proceder al Pago Seguro &rarr;
+      </button>
+
+      <div class="secure-checkout-guarantee">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span>Transacciones protegidas con encriptación SSL de 256 bits</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Slide-out Wishlist Drawer -->
+  <aside class="wishlist-drawer" id="wishlistDrawer" aria-label="Lista de deseos">
+    <div class="wishlist-drawer-header">
+      <h2 class="cart-title">Piezas Guardadas</h2>
+      <button class="cart-close-btn" id="wishlistCloseBtn" aria-label="Cerrar deseos">&times;</button>
+    </div>
+    <div class="wishlist-items-container" id="wishlistItemsList">
+      <!-- Populated via JS -->
+    </div>
+  </aside>
+
+  <!-- Product Quick View Modal -->
+  <div class="product-modal-backdrop" id="productModalBackdrop">
+    <div class="product-modal" id="productModal">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar modal">&times;</button>
+      
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          <img src="" alt="" id="modalProductImg" class="modal-main-img">
+          <div class="modal-badge-float" id="modalBadge">Edición Limitada</div>
+        </div>
+        
+        <div class="modal-info">
+          <span class="modal-category" id="modalCategory">CATEGORÍA</span>
+          <h2 class="modal-product-title" id="modalTitle">Nombre de la Joya</h2>
+          <div class="modal-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-text" id="modalRatingText">5.0 (42 reseñas verificadas)</span>
+          </div>
+          <div class="modal-price-wrap">
+            <span class="modal-price" id="modalPrice">$0.00</span>
+            <span class="tax-info">Impuestos incluidos | Envío gratuito disponible</span>
+          </div>
+
+          <p class="modal-desc" id="modalDescription">Descripción de la pieza artesanal...</p>
+
+          <!-- Metal Choice Selector -->
+          <div class="modal-option-group">
+            <label class="option-label">Metal Precioso: <strong id="selectedMetalText">Plata de Ley 925</strong></label>
+            <div class="metal-selector" id="metalSelector">
+              <button class="metal-option active" data-metal="silver" data-price-mult="1.0">
+                <span class="metal-swatch silver"></span>
+                <span>Plata 925</span>
+              </button>
+              <button class="metal-option" data-metal="gold" data-price-mult="1.35">
+                <span class="metal-swatch gold"></span>
+                <span>Vermeil Oro 18K</span>
+              </button>
+              <button class="metal-option" data-metal="rosegold" data-price-mult="1.4">
+                <span class="metal-swatch rosegold"></span>
+                <span>Oro Rosa 18K</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Size Selector (if applicable) -->
+          <div class="modal-option-group" id="sizeSelectorGroup">
+            <div class="size-label-row">
+              <label class="option-label">Talla: <strong id="selectedSizeText">Talla M (16 mm)</strong></label>
+              <button class="size-guide-inline-btn" id="openSizeGuideModal">¿Cuál es mi talla?</button>
+            </div>
+            <div class="size-selector" id="sizeSelector">
+              <button class="size-chip" data-size="S (14-15 mm)">S</button>
+              <button class="size-chip active" data-size="M (16-17 mm)">M</button>
+              <button class="size-chip" data-size="L (18-19 mm)">L</button>
+              <button class="size-chip" data-size="Ajustable">Ajustable</button>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="modal-actions-row">
+            <div class="quantity-picker">
+              <button class="qty-btn" id="modalQtyMinus">&minus;</button>
+              <span class="qty-number" id="modalQtyVal">1</span>
+              <button class="qty-btn" id="modalQtyPlus">&plus;</button>
+            </div>
+            <button class="btn btn-primary btn-add-modal" id="modalAddToCartBtn">
+              Añadir a la Bolsa &bull; <span id="modalAddPrice">$0.00</span>
+            </button>
+            <button class="modal-fav-btn" id="modalWishlistBtn" aria-label="Guardar en favoritos">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Accordions for details -->
+          <div class="modal-accordions">
+            <details class="acc-item" open>
+              <summary>Especificaciones & Dimensiones</summary>
+              <p id="modalSpecs">Plata 925 pulida a mano con baño hipoalergénico de rodio protector contra el deslustre.</p>
+            </details>
+            <details class="acc-item">
+              <summary>Garantía & Cuidado</summary>
+              <p>Mantenimiento y pulido de cortesía durante los primeros 2 años en cualquier boutique SMYKKE. Viene con paño abrillantador anti-rayas.</p>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Size Guide / Information Modal -->
+  <div class="info-modal-backdrop" id="infoModalBackdrop">
+    <div class="info-modal" id="infoModal">
+      <button class="modal-close-btn" id="infoModalClose">&times;</button>
+      <div class="info-modal-content" id="infoModalContent">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
