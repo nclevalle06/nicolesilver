@@ -62,6 +62,11 @@
 
       <!-- Right Action Icons -->
       <div class="header-actions">
+        <div class="auth-actions">
+          <button class="login-btn">Entrar</button>
+          <button class="register-btn">Registrarse</button>
+        </div>
+
         <!-- Currency Selector -->
         <div class="currency-dropdown">
           <select id="currencySelect" aria-label="Seleccionar moneda" class="currency-select">
@@ -243,6 +248,65 @@
     </div>
   </section>
 
+  <section class="plans-section" id="planes">
+    <div class="section-header plans-header">
+      <span class="section-badge">PLANES MENSUALES</span>
+      <h2 class="section-title">Acceso exclusivo para tu estilo en cada temporada</h2>
+      <p class="section-subtitle">Elige un plan que te acompañe con piezas premiadas, prioridad de lanzamiento y asesoría personal del taller.</p>
+    </div>
+
+    <div class="plans-grid">
+      <article class="plan-card">
+        <span class="plan-tier">Básico</span>
+        <h3>Essential</h3>
+        <div class="plan-price">
+          <span class="currency">€</span>
+          <span class="amount">39</span>
+          <span class="period">/mes</span>
+        </div>
+        <ul>
+          <li>1 pieza de la colección elegante</li>
+          <li>Acceso anticipado a lanzamientos</li>
+          <li>10% en productos de edición</li>
+        </ul>
+        <button class="btn btn-outline plan-btn">Elegir plan</button>
+      </article>
+
+      <article class="plan-card featured-plan">
+        <span class="plan-badge">Más Popular</span>
+        <span class="plan-tier">Premium</span>
+        <h3>Atelier</h3>
+        <div class="plan-price">
+          <span class="currency">€</span>
+          <span class="amount">79</span>
+          <span class="period">/mes</span>
+        </div>
+        <ul>
+          <li>2 piezas mensuales incluidas</li>
+          <li>Consultoría personalizada de estilo</li>
+          <li>Envío premium + empaque premium</li>
+        </ul>
+        <button class="btn btn-primary plan-btn">Elegir plan</button>
+      </article>
+
+      <article class="plan-card">
+        <span class="plan-tier">Signature</span>
+        <h3>Collector</h3>
+        <div class="plan-price">
+          <span class="currency">€</span>
+          <span class="amount">129</span>
+          <span class="period">/mes</span>
+        </div>
+        <ul>
+          <li>Acceso a piezas exclusivas</li>
+          <li>Revisión de talla y joyería a medida</li>
+          <li>Invitaciones a eventos privados</li>
+        </ul>
+        <button class="btn btn-outline plan-btn">Elegir plan</button>
+      </article>
+    </div>
+  </section>
+
   <!-- Catalog / Shop Section -->
   <section class="catalog-section" id="coleccion">
     <div class="section-header">
@@ -421,11 +485,19 @@
         <p class="footer-about">
           Estudio de alta joyería contemporánea fundado sobre la pureza de la plata 925 y la distinción del oro de 18 quilates. Diseñado para almas que aprecian la serenidad.
         </p>
-        <div class="social-links">
-          <a href="#" aria-label="Instagram" class="social-link">Instagram</a>
-          <a href="#" aria-label="Pinterest" class="social-link">Pinterest</a>
-          <a href="#" aria-label="Facebook" class="social-link">Facebook</a>
-          <a href="#" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.64 19.27c0-1.3-.04-2.54.18-3.8l1.29-5.45s-.32-.66-.32-1.64c0-1.54.9-2.68 2.02-2.68.95 0 1.41.71 1.41 1.57 0 .96-.61 2.39-.93 3.72-.27 1.14.56 2.08 1.67 2.08 2 0 3.35-2.56 3.35-5.6 0-2.31-1.55-4.04-4.38-4.04A5.1 5.1 0 0 0 7.5 8.7c-.16.38-.26.91-.26 1.45 0 .84.32 1.7.82 2.24.08.11.1.19.07.32L7.9 14.9c-.09.38-.21 1.23-.12 1.42.06.2.26.18 1.12-.19.74-.37 1.35-.88 1.82-1.53.13-.16.24-.17.38-.08.95.64 2.25 1.59 3.73 1.59 4.01 0 6.77-3.68 6.77-8.47C19.9 5.43 16.85 2 12 2Z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.9l.4-3.3h-3.3V7.27c0-.92.5-1.46 1.58-1.46H17V2.8c-.28-.04-1.23-.1-2.35-.1-2.33 0-3.92 1.41-3.92 4v2.8H8.4V14h1.94v8h3.16Z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.6h2.8v9.8H5.5zm4.8 0h2.68v1.35h.04c.37-.7 1.29-1.44 2.65-1.44 2.83 0 3.35 1.86 3.35 4.28V19.4h-2.8v-17.7h2.8v2.1l.04-.04a3.36 3.36 0 0 1 3.04-1.6c3.26 0 3.86 2.14 3.86 4.93V19.4h-2.8v-18.2h-2.8v18.2H10.3V9.6Z"/></svg>
+          </a>
         </div>
       </div>
 
@@ -654,6 +726,28 @@
       <button class="modal-close-btn" id="infoModalClose">&times;</button>
       <div class="info-modal-content" id="infoModalContent">
         <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Agent Bubble -->
+  <div class="agent-widget" id="agentWidget">
+    <button class="agent-toggle" id="agentToggle" aria-label="Abrir asistente de compras">
+      <span class="agent-icon">✦</span>
+      <span class="agent-label">Asistente</span>
+    </button>
+    <div class="agent-panel" id="agentPanel" hidden>
+      <div class="agent-panel-header">
+        <div>
+          <span class="agent-panel-eyebrow">Luxor Concierge</span>
+          <h3>¿Cómo puedo ayudarte?</h3>
+        </div>
+        <button class="agent-panel-close" id="agentClose" aria-label="Cerrar asistente">×</button>
+      </div>
+      <div class="agent-panel-body">
+        <button class="agent-option" data-agent-action="style">Quiero un look más elegante</button>
+        <button class="agent-option" data-agent-action="gift">Necesito un regalo con estilo</button>
+        <button class="agent-option" data-agent-action="size">Me gustaría asesoría de talla</button>
       </div>
     </div>
   </div>

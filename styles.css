@@ -2574,3 +2574,300 @@ button {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   Auth actions, plans, social icons and bottom assistant
+   ========================================================================== */
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.login-btn,
+.register-btn {
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.login-btn {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text-main);
+}
+
+.register-btn {
+  background: var(--gold-gradient);
+  border-color: transparent;
+  color: #1C1917;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.plans-section {
+  padding: 90px 24px 20px;
+}
+
+.plans-header {
+  margin-bottom: 32px;
+}
+
+.plans-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.plan-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.plan-card.featured-plan {
+  border-color: rgba(197, 160, 89, 0.6);
+  transform: translateY(-8px);
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(246,243,238,.95));
+}
+
+.plan-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border-radius: 999px;
+  background: rgba(197, 160, 89, 0.12);
+  color: var(--gold-dark);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  padding: 5px 9px;
+  text-transform: uppercase;
+}
+
+.plan-tier {
+  display: inline-block;
+  color: var(--gold-primary);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.plan-card h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.plan-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.plan-price .currency {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.plan-price .amount {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+.plan-price .period {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-bottom: 8px;
+}
+
+.plan-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+.plan-card li::before {
+  content: '•';
+  color: var(--gold-primary);
+  margin-right: 8px;
+}
+
+.plan-btn {
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-inverse);
+}
+
+.social-link:hover {
+  background: var(--gold-primary);
+  color: var(--bg-dark);
+  border-color: transparent;
+}
+
+.social-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.agent-widget {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 1800;
+}
+
+.agent-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: var(--bg-dark);
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+}
+
+.agent-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: var(--bg-dark);
+  font-weight: 700;
+}
+
+.agent-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.agent-panel {
+  position: absolute;
+  right: 0;
+  bottom: 74px;
+  width: min(320px, calc(100vw - 32px));
+  background: rgba(20, 19, 18, 0.96);
+  border: 1px solid rgba(197, 160, 89, 0.28);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.agent-panel[hidden] {
+  display: none;
+}
+
+.agent-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.agent-panel-eyebrow {
+  display: block;
+  color: var(--gold-light);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.agent-panel-header h3 {
+  font-family: var(--font-serif);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.agent-panel-close {
+  color: rgba(255,255,255,.75);
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 2px 6px;
+}
+
+.agent-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 14px 16px;
+}
+
+.agent-option {
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.agent-option:hover {
+  background: rgba(197, 160, 89, 0.12);
+  border-color: rgba(197, 160, 89, 0.25);
+}
+
+@media (max-width: 768px) {
+  .auth-actions {
+    margin-right: 0;
+  }
+  .login-btn,
+  .register-btn {
+    display: none;
+  }
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+}

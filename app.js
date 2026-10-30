@@ -819,6 +819,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Auth buttons and floating agent panel
+  document.querySelectorAll('.login-btn, .register-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const label = btn.textContent.trim();
+      showToast(`${label} activado. Nuestros especialistas te ayudarán a elegir la pieza ideal.`);
+    });
+  });
+
+  const agentToggle = document.getElementById('agentToggle');
+  const agentPanel = document.getElementById('agentPanel');
+  const agentClose = document.getElementById('agentClose');
+
+  if (agentToggle && agentPanel) {
+    agentToggle.addEventListener('click', () => {
+      const isHidden = agentPanel.hasAttribute('hidden');
+      if (isHidden) {
+        agentPanel.removeAttribute('hidden');
+      } else {
+        agentPanel.setAttribute('hidden', 'hidden');
+      }
+    });
+  }
+
+  if (agentClose) {
+    agentClose.addEventListener('click', () => agentPanel.setAttribute('hidden', 'hidden'));
+  }
+
+  document.querySelectorAll('.agent-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.getAttribute('data-agent-action');
+      const messages = {
+        style: 'Perfecto, te recomendamos una selección con líneas sobrias y una pieza focal en oro o plata 925.',
+        gift: 'Te recomiendo una caja premium con nota personalizada, ideal para regalar un recuerdo elegante y atemporal.',
+        size: 'Nuestra guía de tallas está disponible en el modal de cada pieza; te asesoramos para elegir la mejor medida.'
+      };
+      showToast(messages[action] || 'Te ayudamos a elegir la pieza perfecta.');
+      if (agentPanel) agentPanel.setAttribute('hidden', 'hidden');
+    });
+  });
+
   // Modal events
   document.getElementById('modalCloseBtn').addEventListener('click', closeProductModal);
   productModalBackdrop.addEventListener('click', (e) => {
